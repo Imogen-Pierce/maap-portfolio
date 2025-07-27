@@ -4,7 +4,7 @@ import tailwindcss from '@tailwindcss/vite';
 // https://astro.build/config
 export default defineConfig({
 	site: 'https://maap-portfolio.pages.dev/',
-	base: 'astro-photography-portfolio',
+	base: 'maap-portfolio',
 	vite: {
 		plugins: [tailwindcss()],
 	},
