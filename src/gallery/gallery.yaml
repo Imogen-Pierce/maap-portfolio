@@ -1,90 +1,106 @@
 collections:
-  - id: nature
-    name: Nature
-  - id: travel
-    name: Travel
-  - id: street
-    name: Street
+  - id: shoreline
+    name: Shoreline
+  - id: city
+    name: City
+
 images:
-  - path: nature/nature-2.jpg
+  - path: shoreline/beavertaillight.jpg
     meta:
-      title: Nature scene 2
-      description: Serene natural landscape capturing the essence of wilderness.
-      collections:
-        - nature
-    exif: {}
-  - path: nature/nature-3.jpg
-    meta:
-      title: Nature scene 3
-      description: Breathtaking natural vista showcasing environmental beauty.
+      title: Beavertail Light
+      description: Beavertail Lighthouse
       collections:
         - featured
-        - nature
+        - shoreline
     exif: {}
-  - path: nature/nature-5.jpg
+  - path: shoreline/blockislandnorthlight.jpg
     meta:
-      title: Nature scene 5
-      description: Natural landscape showing the raw beauty of the environment.
-      collections:
-        - nature
-    exif: {}
-  - path: nature/nature-7.jpg
-    meta:
-      title: Nature scene 7
-      description: Stunning natural landscape capturing environmental beauty.
+      title: Block Island North Light
+      description: Block Island North Lighthouse
       collections:
         - featured
-        - nature
+        - shoreline
     exif: {}
-  - path: nature/nature-8.jpg
+  - path: shoreline/blockislandselighthouse.jpg
     meta:
-      title: Nature scene 8
-      description: Beautiful natural vista showcasing environmental wonder.
-      collections:
-        - nature
-    exif: {}
-  - path: nature/L1002174.jpg
-    meta:
-      title: Travel scene 6
-      description: null
+      title: Block Island South-East Light
+      description: Block Island South-East Lighthouse
       collections:
         - featured
-        - nature
-    exif:
-      captureDate: 2025-03-27T10:35:21.000Z
-      fNumber: 8
-      focalLength: 28
-      iso: 100
-      model: LEICA Q3
-      shutterSpeed: 1250
-      lensModel: SUMMILUX 1:1.7/28 ASPH.
-  - path: nature/nature-10.jpg
-    meta:
-      title: Nature scene 10
-      description: Majestic natural landscape displaying environmental splendor.
-      collections:
-        - nature
+        - shoreline
     exif: {}
-  - path: street/stree-1.jpg
+  - path: shoreline/capereinga.jpg
     meta:
-      title: Street photography 1
-      description: Urban scene capturing the essence of city life.
+      title: Cape Reinga Light
+      description: Cape Reinga Lighthouse
       collections:
         - featured
-        - street
+        - shoreline
     exif: {}
-  - path: travel/travel-1.jpg
+  - path: shoreline/jamestown.jpg
     meta:
-      title: Travel scene 1
-      description: Journey through remarkable destinations.
+      title: Jamestown
+      description: Jamestown Windmill
+      collections:
+        - shoreline
+    exif: {}
+  - path: shoreline/lordspoint.jpg
+    meta:
+      title: Lord's Point
+      description: Lord's Point
+      collections:
+        - shoreline
+    exif: {}
+  - path: shoreline/northlandsanddunes1.jpg
+    meta:
+      title: Northland Sand Dunes 1
+      description: Northland Sand Dunes
+      collections:
+        - shoreline
+    exif: {} 
+  - path: shoreline/northlandsanddunes2.jpg
+    meta:
+      title: Northland Sand Dunes 2
+      description: Northland Sand Dunes
+      collections:
+        - shoreline
+    exif: {} 
+  - path: shoreline/oceanhouse.jpg
+    meta:
+      title: Ocean House
+      description: The Ocean House at Watch Hill
       collections:
         - featured
-        - travel
+        - shoreline
     exif: {}
-  - path: nature/nature-1.jpg
+  - path: shoreline/watchhilllight.jpg
     meta:
-      title: Nature 1
-      description: ''
+      title: Watch Hill Light 1
+      description: Watch Hill Lighthouse
       collections:
-        - nature
+        - shoreline
     exif: {}
+  - path: shoreline/watchhill.jpg
+    meta:
+      title: Watch Hill Light 2
+      description: Watch Hill Lighthouse
+      collections:
+        - featured
+        - shoreline
+    exif: {}
+  - path: city/deerisle.jpg
+    meta:
+      title: Deer Isle
+      description: Deer Isle
+      collections:
+        - city
+    exif: {} 
+  - path: city/martinboroughhotel.jpg
+    meta:
+      title: Martinborough Hotel
+      description: Martinborough Hotel
+      collections:
+        - featured
+        - city
+    exif: {} 
+
