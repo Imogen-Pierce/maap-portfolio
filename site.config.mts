@@ -10,7 +10,7 @@ export interface SocialLink {
 export default {
 	title: 'SR',
 	favicon: 'favicon.ico',
-	owner: 'Sara Richard',
+	owner: 'Matt Anderson',
 	profileImage: 'profile.webp',
 	socialLinks: [
 		{

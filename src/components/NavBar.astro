@@ -3,11 +3,10 @@ import siteConfig from '../../site.config.mjs';
 
 const title = siteConfig.title;
 
-const base = import.meta.env.BASE_URL;
 const menuItems = [
-	{ name: 'Home', link: `${base}` },
-	{ name: 'Gallery', link: `${base}/collections` },
-	{ name: 'About', link: `${base}/about` },
+	{ name: 'Home', link: '/' },
+	{ name: 'Gallery', link: '/collections' },
+	{ name: 'About', link: '/about' },
 ];
 ---
 
