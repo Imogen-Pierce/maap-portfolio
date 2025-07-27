@@ -10,7 +10,7 @@ export interface SocialLink {
 export default {
 	title: 'SR',
 	favicon: 'favicon.ico',
-	owner: 'Matt Anderson',
+	owner: 'Matt Anderson Aerial Photography',
 	profileImage: 'profile.webp',
 	socialLinks: [
 		{
