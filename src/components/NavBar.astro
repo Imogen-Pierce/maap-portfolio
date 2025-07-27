@@ -3,10 +3,13 @@ import siteConfig from '../../site.config.mjs';
 
 const title = siteConfig.title;
 
+// Set base to root (since you're deploying at the domain root)
+const base = '/';
+
 const menuItems = [
-	{ name: 'Home', link: '/' },
-	{ name: 'Gallery', link: '/collections' },
-	{ name: 'About', link: '/about' },
+	{ name: 'Home', link: `${base}` },
+	{ name: 'Gallery', link: `${base}collections` },
+	{ name: 'About', link: `${base}about` },
 ];
 ---
 
