@@ -1,19 +1,30 @@
 ---
 import MainLayout from '../../layouts/MainLayout.astro';
 import PhotoGrid from '../../components/PhotoGrid.astro';
-import { getCollections, getImages } from '../../data/imageStore';
+import gallery from '../../gallery/gallery.yaml';
 
+const base = '/'; // Deploys at root
+
+// Define default "All" collection
 const allCollection = {
 	id: undefined,
 	name: 'All',
 };
-const collections = [allCollection, ...(await getCollections())];
-const { collection } = Astro.params;
-const images = await getImages(collection ? { collection } : {});
-const base = import.meta.env.BASE_URL;
 
+// Extract collection ID from the route
+const { collection } = Astro.params;
+
+// Generate list of collections from YAML
+const collections = [allCollection, ...(gallery.collections ?? [])];
+
+// Filter images by selected collection (or return all)
+const images = gallery.images.filter((image) =>
+	!collection || image.collections.includes(collection)
+);
+
+// Create static paths for each collection
 export const getStaticPaths = async () => {
-	return [{ id: undefined }, ...(await getCollections())].map((collection) => {
+	return [allCollection, ...(gallery.collections ?? [])].map((collection) => {
 		return {
 			params: { collection: collection.id },
 		};
@@ -29,27 +40,28 @@ export const getStaticPaths = async () => {
 				<p class="text-gray-600 max-w-xl mx-auto">Explore Matt's collection of photographic works</p>
 			</div>
 
+			<!-- Filter Buttons -->
 			<div class="flex justify-center mb-10">
 				<div class="flex flex-wrap gap-2 justify-center">
-					{
-						collections.map((collectionBtn) => (
-							<a href={`${base}/collections/${collectionBtn.id ? collectionBtn.id : ''}`}>
-								<div
-									class={`px-4 py-2 border ${
-										collectionBtn.id === collection
-											? 'border-black bg-black text-white'
-											: 'border-gray-200 text-gray-700 hover:border-gray-300'
-									} transition-all`}
-								>
-									{collectionBtn.name}
-								</div>
-							</a>
-						))
-					}
+					{collections.map((collectionBtn) => (
+						<a href={`${base}collections/${collectionBtn.id ?? ''}`}>
+							<div
+								class={`px-4 py-2 border ${
+									collectionBtn.id === collection
+										? 'border-black bg-black text-white'
+										: 'border-gray-200 text-gray-700 hover:border-gray-300'
+								} transition-all`}
+							>
+								{collectionBtn.name}
+							</div>
+						</a>
+					))}
 				</div>
 			</div>
 
+			<!-- Photo Grid -->
 			<PhotoGrid images={images} />
 		</div>
 	</section>
 </MainLayout>
+
