@@ -95,13 +95,17 @@ function sortImages(images: GalleryImage[], options: GetImagesOptions) {
 
 // ✅ Convert to public URL
 const processImages = (images: GalleryImage[]): Image[] => {
-	return images.map((img) => ({
-		src: `/gallery/${img.path}`,
-		title: img.meta.title,
-		description: img.meta.description,
-		collections: img.meta.collections,
-	}));
+	return images.reduce<Image[]>((acc, imageEntry) => {
+		const imagePath = `/gallery/${imageEntry.path}`;
+		try {
+			acc.push(createImageDataFor(imagePath, imageEntry));
+		} catch (error) {
+			console.warn(`[WARN] ${getErrorMsgFrom(error)}`);
+		}
+		return acc;
+	}, []);
 };
+
 
 export const getCollections = async (
 	galleryPath: string = defaultGalleryPath,
