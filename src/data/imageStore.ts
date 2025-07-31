@@ -7,7 +7,6 @@ import {
 	type GalleryData,
 	type GalleryImage,
 	type Image,
-	type ImageModule,
 } from './galleryData.ts';
 
 export class ImageStoreError extends Error {
@@ -16,12 +15,6 @@ export class ImageStoreError extends Error {
 		this.name = 'ImageStoreError';
 	}
 }
-
-// ✅ Adjust glob to match /public/gallery/
-const imageModules = import.meta.glob('/public/gallery/**/*.{jpg,jpeg,png,gif}', {
-	eager: true,
-	as: 'url',
-});
 
 const defaultGalleryPath = 'src/gallery/gallery.yaml';
 export const featuredCollectionId = 'featured';
@@ -100,32 +93,14 @@ function sortImages(images: GalleryImage[], options: GetImagesOptions) {
 	return result;
 }
 
-// ✅ Prepend "/public/gallery/" to each image entry for lookup
+// ✅ Convert to public URL
 const processImages = (images: GalleryImage[]): Image[] => {
-	return images.reduce<Image[]>((acc, imageEntry) => {
-		const imagePath = `/public/gallery/${imageEntry.path}`;
-		try {
-			acc.push(createImageDataFor(imagePath, imageEntry));
-		} catch (error) {
-			console.warn(`[WARN] ${getErrorMsgFrom(error)}`);
-		}
-		return acc;
-	}, []);
-};
-
-const createImageDataFor = (imagePath: string, img: GalleryImage): Image => {
-	const imageModule = imageModules[imagePath] as ImageModule | undefined;
-
-	if (!imageModule) {
-		throw new ImageStoreError(`Image not found: ${imagePath}`);
-	}
-
-	return {
-		src: imageModule.default,
+	return images.map((img) => ({
+		src: `/gallery/${img.path}`,
 		title: img.meta.title,
 		description: img.meta.description,
 		collections: img.meta.collections,
-	};
+	}));
 };
 
 export const getCollections = async (
@@ -133,4 +108,3 @@ export const getCollections = async (
 ): Promise<Collection[]> => {
 	return (await loadGalleryData(galleryPath)).collections;
 };
-
