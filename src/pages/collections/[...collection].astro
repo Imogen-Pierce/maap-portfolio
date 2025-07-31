@@ -15,14 +15,12 @@ const allCollection = {
 const { collection } = Astro.params;
 
 // Generate list of collections from YAML
-const collections = [allCollection, ...(gallery.collections ?? [])];
+const collections = [allCollection, ...(await getCollections())];
 
 // Filter images by selected collection (or return all)
-const images = gallery.images.filter((image) =>
-	!collection || image.collections.includes(collection)
-);
+const images = await getImages(collection ? { collection } : {});
 
-// Create static paths for each collection
+// ✅ Moved export here — inside the frontmatter block
 export const getStaticPaths = async () => {
 	const allCollection = {
 		id: undefined,
@@ -36,6 +34,7 @@ export const getStaticPaths = async () => {
 		};
 	});
 };
+---
 
 <MainLayout>
 	<section class="py-16 pt-24">
