@@ -6,66 +6,93 @@ collections:
 
 images:
   - path: /gallery/shoreline/beavertaillight.jpg
-    title: Beavertail Light
-    description: Beavertail Lighthouse
-    collections: [featured, shoreline]
+    meta:
+      title: "Beavertail Light"
+      description: "Beavertail Lighthouse"
+      collections: [featured, shoreline]
+    exif: {}
 
   - path: /gallery/shoreline/blockislandnorthlight.jpg
-    title: Block Island North Light
-    description: Block Island North Lighthouse
-    collections: [featured, shoreline]
+    meta:
+      title: "Block Island North Light"
+      description: "Block Island North Lighthouse"
+      collections: [featured, shoreline]
+    exif: {}
 
   - path: /gallery/shoreline/blockislandselighthouse.jpg
-    title: Block Island South-East Light
-    description: Block Island South-East Lighthouse
-    collections: [featured, shoreline]
+    meta:
+      title: "Block Island South-East Light"
+      description: "Block Island South-East Lighthouse"
+      collections: [featured, shoreline]
+    exif: {}
 
   - path: /gallery/shoreline/capereinga.jpg
-    title: Cape Reinga Light
-    description: Cape Reinga Lighthouse
-    collections: [featured, shoreline]
+    meta:
+      title: "Cape Reinga Light"
+      description: "Cape Reinga Lighthouse"
+      collections: [featured, shoreline]
+    exif: {}
 
   - path: /gallery/shoreline/jamestown.jpg
-    title: Jamestown
-    description: Jamestown Windmill
-    collections: [shoreline]
+    meta:
+      title: "Jamestown"
+      description: "Jamestown Windmill"
+      collections: [shoreline]
+    exif: {}
 
   - path: /gallery/shoreline/lordspoint.jpg
-    title: Lord's Point
-    description: Lord's Point
-    collections: [shoreline]
+    meta:
+      title: "Lord's Point"
+      description: "Lord's Point"
+      collections: [shoreline]
+    exif: {}
 
   - path: /gallery/shoreline/northlandsanddunes1.jpg
-    title: Northland Sand Dunes 1
-    description: Northland Sand Dunes
-    collections: [shoreline]
+    meta:
+      title: "Northland Sand Dunes 1"
+      description: "Northland Sand Dunes"
+      collections: [shoreline]
+    exif: {}
 
   - path: /gallery/shoreline/northlandsanddunes2.jpg
-    title: Northland Sand Dunes 2
-    description: Northland Sand Dunes
-    collections: [shoreline]
+    meta:
+      title: "Northland Sand Dunes 2"
+      description: "Northland Sand Dunes"
+      collections: [shoreline]
+    exif: {}
 
   - path: /gallery/shoreline/oceanhouse.jpg
-    title: Ocean House
-    description: The Ocean House at Watch Hill
-    collections: [featured, shoreline]
+    meta:
+      title: "Ocean House"
+      description: "The Ocean House at Watch Hill"
+      collections: [featured, shoreline]
+    exif: {}
 
   - path: /gallery/shoreline/watchhilllight.jpg
-    title: Watch Hill Light 1
-    description: Watch Hill Lighthouse
-    collections: [shoreline]
+    meta:
+      title: "Watch Hill Light 1"
+      description: "Watch Hill Lighthouse"
+      collections: [shoreline]
+    exif: {}
 
   - path: /gallery/shoreline/watchhill.jpg
-    title: Watch Hill Light 2
-    description: Watch Hill Lighthouse
-    collections: [featured, shoreline]
+    meta:
+      title: "Watch Hill Light 2"
+      description: "Watch Hill Lighthouse"
+      collections: [featured, shoreline]
+    exif: {}
 
   - path: /gallery/city/deerisle.jpg
-    title: Deer Isle
-    description: Deer Isle
-    collections: [city]
+    meta:
+      title: "Deer Isle"
+      description: "Deer Isle"
+      collections: [city]
+    exif: {}
 
   - path: /gallery/city/martinboroughhotel.jpg
-    title: Martinborough Hotel
-    description: Martinborough Hotel
-    collections: [featured, city]
+    meta:
+      title: "Martinborough Hotel"
+      description: "Martinborough Hotel"
+      collections: [featured, city]
+    exif: {}
+
