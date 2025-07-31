@@ -4,13 +4,24 @@ import siteConfig from '../../site.config.mjs';
 const owner = siteConfig.owner;
 ---
 
+<!-- ✅ Background Image -->
+<div
+	class="absolute top-[80px] bottom-[120px] left-0 right-0 z-0"
+	style={{
+		backgroundImage: 'url(/images/nature/nature-8.jpg)', // ✅ make sure this exists in public/images
+		backgroundSize: 'cover',
+		backgroundPosition: 'center',
+		backgroundRepeat: 'no-repeat',
+		opacity: 0.6,
+	}}
+></div>
+
+<!-- ✅ Foreground Content -->
 <div class="absolute left-0 right-0 z-0">
 	<div class="text-center mb-12 relative z-10">
 		<h1 class="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
 			{owner}
 		</h1>
-		<!-- Optional subtext -->
-		<!-- <p class="mt-4 text-base md:text-lg text-gray-700">A place to showcase my photography</p> -->
 
 		<a
 			href="https://www.shutterstock.com/g/your-client-name"
