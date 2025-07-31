@@ -18,29 +18,25 @@ const menuItems = [
 	rel="stylesheet"
 />
 
-<nav
-	class="fixed top-0 left-0 w-full z-50 transition-all duration-300 py-5 bg-white shadow-sm"
->
-	<div class="container mx-auto flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
-		<a class="text-2xl font-bold font-sans">
-			{title}
-		</a>
+<nav class="fixed top-0 left-0 w-full z-50 py-5 bg-white shadow-sm">
+	<div class="container mx-auto flex flex-col md:flex-row md:items-center md:justify-between">
+		<!-- Logo aligned left -->
+		<div class="flex justify-start px-4 md:px-0">
+			<a class="text-2xl font-bold font-sans">{title}</a>
+		</div>
 
-		<!-- Always-visible Menu -->
-		<div class="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-8">
-			{
-				menuItems.map((item) => (
-					<a
-						href={item.link}
-						target={item.external ? '_blank' : undefined}
-						rel={item.external ? 'noopener noreferrer' : undefined}
-						class="nav-link relative after:content-[''] after:absolute after:left-0 after:bottom-[-2px] after:h-[2px] after:bg-black after:w-0 hover:after:w-full transition-all"
-					>
-						{item.name}
-					</a>
-				))
-			}
+		<!-- Menu aligned right on mobile -->
+		<div class="flex flex-col items-end space-y-2 mt-4 md:mt-0 md:flex-row md:items-center md:space-y-0 md:space-x-8">
+			{menuItems.map((item) => (
+				<a
+					href={item.link}
+					target={item.external ? '_blank' : undefined}
+					rel={item.external ? 'noopener noreferrer' : undefined}
+					class="nav-link relative after:content-[''] after:absolute after:left-0 after:bottom-[-2px] after:h-[2px] after:bg-black after:w-0 hover:after:w-full transition-all"
+				>
+					{item.name}
+				</a>
+			))}
 		</div>
 	</div>
 </nav>
-
