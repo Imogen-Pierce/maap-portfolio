@@ -2,8 +2,6 @@
 import siteConfig from '../../site.config.mjs';
 
 const title = siteConfig.title;
-
-// Set base to root (since you're deploying at the domain root)
 const base = '/';
 
 const menuItems = [
@@ -16,23 +14,20 @@ const menuItems = [
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link
-  href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
-  rel="stylesheet"
+	href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
+	rel="stylesheet"
 />
 
 <nav
-	x-data="{ isOpen: false, scrolled: false }"
-	@scroll.window="scrolled = window.scrollY > 50"
-	class="fixed top-0 left-0 w-full z-50 transition-all duration-300"
-	:class="scrolled ? 'py-3 bg-white shadow-sm' : 'py-5 bg-transparent'"
+	class="fixed top-0 left-0 w-full z-50 transition-all duration-300 py-5 bg-white shadow-sm"
 >
-	<div class="container mx-auto flex justify-between items-center">
+	<div class="container mx-auto flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
 		<a class="text-2xl font-bold font-sans">
 			{title}
 		</a>
 
-		<!-- Desktop Menu -->
-		<div class="hidden md:flex space-x-8">
+		<!-- Always-visible Menu -->
+		<div class="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-8">
 			{
 				menuItems.map((item) => (
 					<a
@@ -46,13 +41,6 @@ const menuItems = [
 				))
 			}
 		</div>
+	</div>
+</nav>
 
-		<!-- Mobile Menu Button -->
-		<button @click="isOpen = !isOpen" class="md:hidden text-gray-800 focus:outline-none">
-			<svg x-show="!isOpen" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-				<path
-					stroke-linecap="round"
-					stroke-linejoin="round"
-					stroke-width="2"
-					d="M4 6h16M4 12h16M4 18h16"></path>
-			</svg>
