@@ -19,9 +19,9 @@ images:
       collections: [featured, shoreline]
     exif: {}
 
-  - path: /public/gallery/shoreline/blockislandselighthouse.jpg
+  - path: /public/gallery/shoreline/blockislandselight.jpg
     meta:
-      title: "Block Island South-East Light"
+      title: "Block Island Southeast Light"
       description: "Block Island South-East Lighthouse"
       collections: [featured, shoreline]
     exif: {}
