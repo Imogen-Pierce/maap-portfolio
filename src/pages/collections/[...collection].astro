@@ -24,13 +24,18 @@ const images = gallery.images.filter((image) =>
 
 // Create static paths for each collection
 export const getStaticPaths = async () => {
-	return [allCollection, ...(gallery.collections ?? [])].map((collection) => {
+	const allCollection = {
+		id: undefined,
+		name: 'All',
+	};
+	const collections = [allCollection, ...(await getCollections())];
+
+	return collections.map((collection) => {
 		return {
 			params: { collection: collection.id },
 		};
 	});
 };
----
 
 <MainLayout>
 	<section class="py-16 pt-24">
