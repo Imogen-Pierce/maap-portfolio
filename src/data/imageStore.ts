@@ -93,10 +93,10 @@ function sortImages(images: GalleryImage[], options: GetImagesOptions) {
 	return result;
 }
 
-// ✅ Convert to public URL
+// ✅ Strip leading "/public" so final URLs work
 const processImages = (images: GalleryImage[]): Image[] => {
 	return images.map((img) => ({
-		src: `/gallery/${img.path}`,
+		src: img.path.replace(/^\/public/, ''),
 		title: img.meta.title,
 		description: img.meta.description,
 		collections: img.meta.collections,
@@ -108,3 +108,4 @@ export const getCollections = async (
 ): Promise<Collection[]> => {
 	return (await loadGalleryData(galleryPath)).collections;
 };
+
