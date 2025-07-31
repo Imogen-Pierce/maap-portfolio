@@ -4,7 +4,7 @@ import '../styles/glightbox-custom.css';
 
 interface Props {
   images: {
-    path: string;
+    src: string;
     title: string;
     description?: string;
   }[];
@@ -20,14 +20,14 @@ const { images = [] } = Astro.props;
 
   {images.map((image) => (
     <a
-      href={image.path}
+      href={image.src}
       class="photo-item glightbox absolute transition-transform hover:scale-[1.02] hover:z-10"
       data-gallery="gallery1"
       data-type="image"
       data-glightbox={image.description ? `title: ${image.description}` : undefined}
     >
       <img
-        src={image.path}
+        src={image.src}
         alt={image.title}
         class="w-full h-full object-cover rounded-sm shadow-sm hover:shadow-lg transition-shadow"
         loading="lazy"
