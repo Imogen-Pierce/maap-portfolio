@@ -1,7 +1,7 @@
 ---
 import MainLayout from '../../layouts/MainLayout.astro';
 import PhotoGrid from '../../components/PhotoGrid.astro';
-import gallery from '../../gallery/gallery.yaml';
+import { getCollections, getImages } from '../../data/imageStore';
 
 const base = '/'; // Deploys at root
 
