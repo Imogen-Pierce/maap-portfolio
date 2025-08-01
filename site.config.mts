@@ -8,7 +8,7 @@ export interface SocialLink {
 }
 
 export default {
-	title: 'M.A.A.P.',
+	title: 'MAAP',
 	favicon: 'favicon.ico',
 	owner: 'Matt Anderson Aerial Photography',
 	profileImage: 'profile.webp',
