@@ -1,14 +1,49 @@
 ---
-import MainLayout from '../layouts/MainLayout.astro';
-
-const pageTitle = 'Contact';
+import siteConfig from '../../site.config.mjs';
+const owner = siteConfig.owner;
 ---
 
-<MainLayout>
-  <section class="container mx-auto py-20 px-6 text-center">
-    <h1 class="text-4xl font-bold mb-6">{pageTitle}</h1>
-    <p class="text-lg text-gray-700 max-w-2xl mx-auto">
-      This page is being built. Check back soon!
-    </p>
-  </section>
-</MainLayout>
+<h1 class="text-3xl font-bold mb-6 text-center">Contact {owner}</h1>
+
+<form
+  action="https://formspree.io/f/movlnapr"
+  method="POST"
+  class="max-w-xl mx-auto grid gap-4 p-6 border border-gray-300 rounded-md bg-white shadow"
+>
+  <label class="block">
+    <span class="text-gray-700">Name</span>
+    <input
+      type="text"
+      name="name"
+      required
+      class="mt-1 block w-full rounded border-gray-300 shadow-sm focus:ring focus:ring-blue-200"
+    />
+  </label>
+
+  <label class="block">
+    <span class="text-gray-700">Email</span>
+    <input
+      type="email"
+      name="email"
+      required
+      class="mt-1 block w-full rounded border-gray-300 shadow-sm focus:ring focus:ring-blue-200"
+    />
+  </label>
+
+  <label class="block">
+    <span class="text-gray-700">Message</span>
+    <textarea
+      name="message"
+      rows="5"
+      required
+      class="mt-1 block w-full rounded border-gray-300 shadow-sm focus:ring focus:ring-blue-200"
+    ></textarea>
+  </label>
+
+  <button
+    type="submit"
+    class="mt-4 bg-black text-white px-4 py-2 rounded hover:bg-gray-800 transition"
+  >
+    Send Message
+  </button>
+</form>
